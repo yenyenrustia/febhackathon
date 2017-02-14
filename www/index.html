@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  <!--   <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+     <title>Landit | Live.Life.Love</title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="lib/utils/ng-cordova.min.js"></script>
+    <script src="lib/utils/lodash.min.js"></script>
+    <script src="lib/utils/bluebird.js"></script>
+    <script src="lib/utils/angular-google-maps.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/AppCtrl.js"></script>
+    <script src="js/controllers/LoginCtrl.js"></script>
+    <script src="js/controllers/FeedbackCtrl.js"></script>
+    <script src="js/controllers/IntroCtrl.js"></script>
+    <script src="js/controllers/OurCapsuleCtrl.js"></script>
+    <script src="js/controllers/MapCtrl.js"></script>
+    <script src="js/services/AppService.js"></script>
+    <script src="js/directives/directives.js"></script>
+
+<!-- ======================== -->
+ 
+  </head>
+
+  <body ng-app="starter">
+   <ion-nav-view></ion-nav-view>
+  </body>
+</html>

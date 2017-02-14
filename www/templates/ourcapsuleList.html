@@ -1,0 +1,31 @@
+<ion-view title="Our Capsules">
+  <ion-nav-bar class="bar bar-header bar-dark">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+   
+  </ion-nav-bar>
+   <ion-content>
+    <!-- List all existing favorites -->
+    <ion-list ng-repeat= "list in capsuleListdata">
+      <ion-item ng-click="previewCapsule(list)"  class="item item-thumbnail-left">
+        <img  ng-src = "{{list.smallAvatarUrl}}"> 
+        <h2><b>{{list.title}}</b></h2>
+        <p>{{list.owner}}</p><br>
+
+         <i class="icon ion-star"></i>
+                {{list.starCount}}|
+                <i class="icon ion-chatbox"></i> 
+                {{list.commentCount}} |
+                <i class="icon ion-arrow-graph-up-right"></i> 
+                {{list.itemCount}} |
+                <i class="icon ion-ios-copy"></i>
+                {{list.embeddedStorage}}
+      
+    </ion-item>
+   </ion-list>
+
+    <!-- Display message when no favorites exist -->
+
+  </ion-content>
+</ion-view>

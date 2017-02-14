@@ -1,0 +1,22 @@
+<ion-view  hide-nav-bar="true">
+
+
+  <ion-content has-header="false" class="designForm">
+
+        <form ng-submit="submitRegister(register)" name="registerForm" >
+		  <h3>Create Account</h3>
+		  <h4>Please, enter your information</h4>
+             <input type="text" ng-model="register.userName" placeholder="Username" required>
+			 <input type="text" ng-model="register.firstName" id="firstName" placeholder="First Name" required>
+			 <input type="text" ng-model="register.lastName" id="lastName" placeholder="Last Name" required>
+			 <input type="email" ng-model="register.email" placeholder="Email Address" required>
+			 <input type="text" ng-model="register.number" placeholder="Phone Number" required>
+			 <input type="password" ng-model="register.password" placeholder="Password" required>
+			 <input type="password" ng-model="register.passwordConfirm" placeholder="Confirm Password" required>
+
+			<button type="submit" >Sign Up</button>
+			<button ng-click="{register = null}">Cancel</button>
+			<button id="changeButton" ui-sref="login">Have account? Sign in!</button>
+		</form>
+  </ion-content>
+</ion-view>

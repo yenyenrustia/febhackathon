@@ -1,0 +1,39 @@
+<ion-view title="List View" cache-view="false">
+ <ion-nav-bar class="bar bar-header bar-dark">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+   
+  </ion-nav-bar>
+  <ion-content class="has-header">
+   <!--  <ion-refresher pulling-icon="ion-ios-arrow-up" spinner="none" pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+    <div class="list-post" ng-repeat="post in model.currentPosts">
+        <img ng-src="{{ post.images.standard_resolution.url }}" on-double-tap="like($index)" on-hold="displayOptions($index)"/>
+        <div class="item item-avatar">
+            <img ng-src="{{ post.user.profile_picture }}">
+            <h2 class="list-post-user" ng-class="{ 'list-post-user-expanded': !post.caption }">{{ post.user.username }} <span class="list-post-timestamp"><i class="icon ion-clock"></i> {{ post.created_time * 1000 | date: 'MMM d, yyyy'}}</span></h2>
+            <p>{{ post.caption.text }}</p>
+        </div>
+        <div class="button-bar bar-light">
+            <button class="button" ng-click="like($index)" ng-class="{ 'button-assertive': post.user_has_liked }"><i class="icon ion-heart"></i> {{ post.likes.count | number }}</button>
+            <button class="button"><i class="icon ion-chatbubbles"></i> {{ post.comments.count | number }}</button>
+        </div>
+    </div> -->
+      <ion-refresher pulling-icon="ion-ios-arrow-up" spinner="none" pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+        <ion-list ng-repeat= "list in capsuleListdata">
+      <ion-item class="item item-thumbnail-left" ng-click="viewItem(list)">
+        <img  ng-src = "{{list.smallAvatarUrl}}"> 
+        <h2><b>{{list.title}}</b></h2>
+        <p>{{list.owner}}</p>
+         <i class="icon ion-star"></i>
+                {{list.starCount}}|
+                <i class="icon ion-chatbox"></i> 
+                {{list.commentCount}} |
+                <i class="icon ion-arrow-graph-up-right"></i> 
+                {{list.itemCount}} |
+                <i class="icon ion-ios-copy"></i>
+                {{list.embeddedStorage}}
+    </ion-item>
+   </ion-list>
+  </ion-content>
+</ion-view>

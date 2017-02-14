@@ -1,0 +1,104 @@
+<ion-view id="intro" ng-class="{ 'slide-center': slideIndex == 1, 'slide-right': slideIndex == 2 }" hide-back-button="true" cache-view="false">
+  <ion-nav-bar>
+    <ion-nav-buttons side="left">
+      <button class="button button-positive button-clear"
+        ng-click="startApp()" ng-show="!slideIndex">
+        Skip
+      </button>
+      <button class="button button-positive button-clear"
+        ng-click="previous()" ng-show="slideIndex > 0">
+        Back
+      </button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right"> 
+      <button class="button button-positive button-clear"
+        ng-click="next()" ng-show="slideIndex != 4">
+        Next
+      </button>
+      <button class="button button-positive button-clear"
+        ng-click="startApp()" ng-show="slideIndex == 4">
+        Explore
+      </button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content scroll="false">
+    <ion-slide-box  class="fullscreen-image" on-slide-changed="slideChanged(index)">
+      <ion-slide class="vertical-center-container">
+          <div class="vertical-center text-center">
+            <h4>Welcome to LANDIT</h4>
+              <img class="full-image rounded-image" > <!--src="img/landit2.png"--> 
+            <p class="intro-text">
+              Explore nearby locations on a map.
+            </p>
+            <p class="intro-text">
+              View nearby places in a list.
+            </p>
+            <p class="intro-text">
+              Powered by LANDIT.
+            </p>
+          </div>
+      </ion-slide>
+
+      <ion-slide class="vertical-center-container">
+          <div class="vertical-center padding">
+            <div id="intro-info" class="text-center">
+              <h2>What is LANDIT?</h2>
+              <h4>LANDIT is a location-based social platform that provides its users the freedom to enjoy and explore what a certain place has to offer.  They can discover new places based from the different locations being provided which would give them a lot of ideas of things to fulfill in a bucketlist.</h4>
+	            <h4>User rankings will also be done in accordance as to who were able to fulfill most of their bucketlist.</h4>
+              <h2>Live. Life. Love</h2>
+	           <h4>Bucketlists are <b>social</b>. Create fun and personal location-based experiences for your family and friends. Post it in your bucketlist profile...</h4>
+            </div>
+          </div>
+      </ion-slide>
+
+      <ion-slide class="vertical-center-container">
+          <div class="vertical-center padding">
+            <div id="intro-info" class="text-center">
+              <h2>Getting Started</h2>
+              <h3>Discovery Engine</h3>
+	              <h4>This is your portal to discover different places that you would most likely have in your bucketlist.</h4>
+              <h3>Profile</h2>
+                <h4>Your bucketlist will be displayed here. Everyone gets the chance to be a blogger too!</h4>
+	            <h3>User Rankings</h3>
+                <h4>See different people who are also fulfilling their bucketlist and know the ones who were most likely able to complete theirs!</h4>
+            </div>
+          </div>
+      </ion-slide>
+
+
+      <ion-slide class="vertical-center-container">
+          <div class="vertical-center padding">
+            <div id="intro-info" class="text-center">
+              <h2>That's it!</h2>
+	      <h4>If you need to revisit any of this information it will be accessable from the About menu option.</h4>
+              <h4>Enjoy! - the LANDIT Team</h4>
+            </div>
+          </div>
+      </ion-slide>
+
+      <ion-slide class="vertical-center-container">
+        <div class="vertical-center">
+          <h4 class="text-center">Developed by the LANDIT Team</h4>
+          <div class="row">
+            <div class="col">
+              <img class="full-image rounded-image" > <!--src="img/landit2.png"-->
+              <p class="intro-text text-center">LANDIT app version 0.0.1</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <img class="full-image rounded-image" src="img/ionic.png">
+              <p class="intro-text text-center">Built with Ionic</p>
+            </div>
+          </div>
+          <h4 class="text-center">Powered by LANDIT.</h4>
+
+          <div class="padding-center">
+            <a href="javascript:void(0)" ng-click="openWindow('https://capsules.io')" class="button button-light">The LANDIT Website</a>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

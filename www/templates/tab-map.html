@@ -1,0 +1,51 @@
+<ion-view title="Map">
+ <ion-nav-bar class="bar bar-header bar-dark">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+       <ion-nav-buttons side="right">
+     <a ng-click="centerOnMe()" style=" margin-left: auto;  margin-right: auto; width: 6em" class="button button-icon icon ion-pinpoint"></a>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+    <ion-content scroll="false" class="has-header">
+     <div id="map_canvas">
+	    <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options"  data-tap-disabled="true">
+		  <!--   <ui-gmap-marker ng-repeat="marker in markers" idkey="marker.cid" icon="marker.smallAvatarUrl" coords="marker.loc" click="showCapsule(marker.data,marker.id)" fit="false" dorebuildall="true">
+		    	 
+	        </ui-gmap-marker>
+	         <ui-gmap-circle ng-repeat="c in circles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius"
+                visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable" control="c.control"></ui-gmap-circle> -->
+	    </ui-gmap-google-map>
+	</div>
+    </ion-content>
+     <ion-footer-bar style="height:100px;">
+     <!--  <span ng-repeat = "item in markers ">
+      	{{item.title}}
+      </span> -->
+  <!--     <ion-slide-box show-pager="false">
+       <ion-slide  ng-repeat="item in markers"  >
+      	 <div class="card">{{item.title}}</div>
+      </ion-slide>
+      </ion-slide-box> -->
+       	    <ion-slide-box show-pager="false" does-continue="true"  active-slide="activeSlide">
+			    <ion-slide  ng-repeat="item in markers" ng-click="SlidePreview(item.data)">
+			    <div class="row row-center">
+				   	 <div class="col col-20"><img class="full-image rounded-image" src={{item.data.smallAvatarUrl}}></div>
+				     <div class="col col-80">
+				     	    <b>{{item.data.title}}</b><br>
+				    		{{item.owner}}<br>
+				    	 <i class="icon ion-star"></i>
+				        {{item.data.starCount}}|
+				        <i class="icon ion-chatbox"></i> 
+				        {{item.data.commentCount}} |
+				        <i class="icon ion-arrow-graph-up-right"></i> 
+				        {{item.data.itemCount}} |
+				        <i class="icon ion-ios-copy"></i>
+				        {{item.data.embeddedStorage}}
+				     </div>
+			    </div>
+				</ion-slide>
+			</ion-slide-box>
+    </ion-footer-bar>
+
+</ion-view>

@@ -1,0 +1,27 @@
+ <ion-view title="Item">
+<ion-nav-bar>
+  <ion-nav-back-button >
+  
+  </ion-nav-back-button>
+</ion-nav-bar>
+    <ion-content>
+    <ion-slide-box show-pager="false"  active-slide="itemData" does-continue="true">
+	    <ion-slide  ng-repeat="item in capsulelist" ng-if ="$index != 0" >
+		    <div class="card">
+			  <div class="item item-divider">
+			     <img ng-src="{{item.dataUrl}}" src="../img/capsule.gif" width="100%" />
+			  </div>
+			  <div class="item item-text-wrap">
+			  	 {{item.description}}
+			  	 <span class="item-capsule">
+			  	   <i class="icon ion-ios-heart">{{item.hearts}}</i>
+			  	   <i class="icon ion-chatbox">{{item.commentCount}}</i>
+			  <!-- 	   <i class="ion-android-more-vertical"></i> -->
+			  	  </span>
+		       </div>
+		    	
+		    </div>
+		</ion-slide>
+	</ion-slide-box>
+    </ion-content>
+  </ion-view>

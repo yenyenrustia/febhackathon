@@ -1,0 +1,62 @@
+<ion-view title="Settings">
+  <ion-nav-bar class="bar bar-header bar-dark">
+    <ion-nav-buttons side="left">
+      <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-icon ion-ios-plus-empty" ng-click="showModalAddFavorite()"></button>
+    </ion-nav-buttons>
+  </ion-nav-bar>
+  <ion-content>
+    <!-- List all existing favorites -->
+     <div class="list">
+       <div class="item">
+        <b>DISCOVERY</b>
+       </div>
+        <div class="item">
+         <div class="row">
+          <div class="col col-90">
+          <h2>Enable compass phone</h2>
+          <p>If enabled in Discovery map orientation changes based on orientation of phone.</p>
+          </div>
+           <div class="col">
+             <label class="toggle toggle-dark">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+           </div>
+
+         </div>
+       </div>
+        <div class="item">
+          <div class="row">
+          <div class="col col-90">
+            <h2>Discover in background</h2>
+            <p> Allow capsules to be discovered in the background so you can be alerted in their presense.</p>
+          </div>
+          <div class="col">
+             <label class="toggle toggle-dark">
+               <input type="checkbox">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+           </div>
+          </div>
+       </div>
+        <div class="item">
+         <div class="row">
+          <div class="col ">
+           <h2>Poll interval</h2>
+          <p>Set the interval Capsules.io will poll to see if there are capsules in your area</p>
+        </div>
+      </div>
+       </div>
+     </div>
+
+    <!-- Display message when no favorites exist -->
+   
+  </ion-content>
+</ion-view>

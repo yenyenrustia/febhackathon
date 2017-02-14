@@ -1,0 +1,90 @@
+<ion-view title="Items in Capsule" >
+<ion-nav-bar>
+  <ion-nav-back-button >
+  </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+      <button class="icon button-icon ion-ios-albums-outline capsuleItemCount " ng-cloak>{{countItem}}</button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="has-header" scroll="true">
+	<ion-slide-box
+	on-slide-changed="slideHasChanged($index)"
+	show-pager="false" 
+	does-continue="true" 
+	disable-scroll="false"
+	active-slide="myActiveSlide">
+	 
+	  <ion-slide>
+	     <!--  <img class="image-modal" ng-src = "{{capsule.largeAvatarUrl}}"/> -->
+	     <ion-list>
+	      	<img id="image-data-coverphoto" ng-src="{{capsulelist[0].dataUrl}}"  class="image-modal">
+	       <ion-item>
+	     
+	       
+	            <div class="row">
+	                 <div class="col">
+				      <img id="image-data-thumbnail" ng-src = "{{capsule.smallAvatarUrl}}"/>
+				     </div>
+				      <div class="col col-75">
+			          <h2>{{capsule.title}}</h2>
+			          <h4>{{capsule.owner}}</h4>
+			         </div>
+		        </div>
+		         <div class="row ">
+	                 <div class="col">
+			          <i class="icon ion-star custom-icon-large"></i>
+				      <i class="icon  ion-chatbox custom-icon-large"></i>
+					    <span class="custom-icon-container">
+					     <i class="icon  ion-star "></i>{{capsule.starCount}} |
+					     <i class="icon  ion-ios-chatbubble "></i> {{capsule.commentCount}} |
+					     <i class="icon  ion-arrow-graph-up-right "></i> {{capsule.itemCount}} |
+					     <i class="icon  ion-ios-browsers"></i> {{capsule.embeddedStorage}}
+					    </span>
+					 </div>
+				 </div>
+			  
+	       </ion-item>
+	     </ion-list>
+
+	  </ion-slide>
+	  <ion-slide>
+	    <div class="card">
+						  <div class="item item-text-wrap">
+						   <h1>Description</h1>
+						   <h2>{{capsulelist[0].description}}</h2>
+						  </div>
+						</div>
+						<div class="card">
+							  <div class="item item-text-wrap">
+							   <h1>Tags</h1>
+							   <button class="button button-stable" ng-repeat="tag in capsulelist[0].tags">{{tag}}
+							   </button>
+							  </div>
+						</div>
+
+	  </ion-slide>
+
+	  <ion-slide>
+	    <div class="capsuleItemNone" ng-show="countItem ==0">Currently no item capsule to display. </div>
+	    <div class="row" ng-repeat="image in capsulelist" ng-if="$index % 4 === 1" >
+	    	
+        <div class="col col-25" ng-if="$index < capsulelist.length" >
+            <img ng-src="{{capsulelist[$index].dataUrl}}" src="../img/capsule.gif" class="capsuleItemList" ng-click="viewItem($index)"/>
+           
+        </div>
+        <div class="col col-25" ng-if="$index + 1 < capsulelist.length">
+            <img ng-src="{{capsulelist[$index + 1].dataUrl}}" err-src="../img/capsule.gif" class="capsuleItemList"  ng-click="viewItem($index+1)" />
+        
+        </div>
+
+        <div class="col col-25" ng-if="$index + 2 < capsulelist.length">
+            <img ng-src="{{capsulelist[$index + 2].dataUrl}}" err-src="../img/capsule.gif"  class="capsuleItemList"  ng-click="viewItem($index+2)"/>
+        </div>
+        <div class="col col-25" ng-if="$index + 3 < capsulelist.length">
+            <img ng-src="{{capsulelist[$index + 3].dataUrl}}"  err-src="../img/capsule.gif" class="capsuleItemList"  ng-click="viewItem($index+3)"/>
+        </div>
+    </div>
+	  </ion-slide>
+	</ion-slide-box>
+</ion-content>
+</ion-view>
